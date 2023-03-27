@@ -53,7 +53,7 @@ namespace Services.Controllers
         {
             try
             {
-                healthHistory.Date = healthHistory.Date.AddDays(1);
+                
                 var s = healthLogic.AddHealthHistory(healthHistory);
                 if (s != null)
                 {
@@ -61,7 +61,7 @@ namespace Services.Controllers
                 }
                 else
                 {
-                    return BadRequest("Somwtinf");
+                    return BadRequest("Someting went wrong");
                 }
             }
             catch (SqlException e)
