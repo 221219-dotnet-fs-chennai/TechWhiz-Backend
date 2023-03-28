@@ -27,7 +27,7 @@ namespace Patient_Test
         }
 
         [Fact]
-        public void Test1()
+        public void GetAll()
         {
             var Patients = _fixture.Create<IEnumerable<Patient>>();
             _patientLogic.Setup(x => x.GetPatients()).Returns(Patients);
@@ -41,7 +41,7 @@ namespace Patient_Test
 
         }
         [Fact]
-        public void Test1Details()
+        public void GetAllExecption()
         {
 
             List<Patient> Patients = null;
@@ -56,7 +56,7 @@ namespace Patient_Test
         }
 
         [Fact]
-        public void Test2()
+        public void GetById()
         {
             var Pateints = _fixture.Create<Patient>();
             var id = _fixture.Create<Guid>();
@@ -68,7 +68,7 @@ namespace Patient_Test
             _patientLogic.Verify(x => x.GetPatientById(id), Times.AtLeastOnce());
         }
         [Fact]
-        public void Test2Details()
+        public void GetByIdExecption()
         {
             List<Patient> Patients = null;
             var id = _fixture.Create<Guid>();
@@ -80,7 +80,7 @@ namespace Patient_Test
         }
 
         [Fact]
-        public void Post_Test()
+        public void Post()
         {
             var req = _fixture.Create<Patient>();
 
@@ -93,7 +93,7 @@ namespace Patient_Test
 
         }
         [Fact]
-        public void Post_TestNull()
+        public void PostExecption()
         {
             var req = _fixture.Create<Patient>();
 
@@ -106,7 +106,7 @@ namespace Patient_Test
 
         }
         [Fact]
-        public void Put_Test()
+        public void Put()
         {
             var patient = _fixture.Create<Patient>();
             var email = _fixture.Create<string>();
@@ -118,7 +118,7 @@ namespace Patient_Test
             _patientLogic.Verify(x => x.UpdatePatient(email, patient), Times.AtLeastOnce());
         }
         [Fact]
-        public void Put_TestDetails()
+        public void PutExecption()
         {
             var patient = _fixture.Create<Patient>();
             var email = _fixture.Create<string>();
@@ -128,7 +128,7 @@ namespace Patient_Test
             _patientLogic.Verify(x => x.UpdatePatient(email, patient), Times.AtLeastOnce());
         }
         [Fact]
-        public void delete_Test()
+        public void Delete()
         {
             var patient = _fixture.Create<Patient>();
             var email = _fixture.Create<string>();
@@ -140,7 +140,7 @@ namespace Patient_Test
             _patientLogic.Verify(x => x.DeletePatient(email), Times.AtLeastOnce());
         }
         [Fact]
-        public void delete_TestDetails()
+        public void DeleteExecption()
         {
             var patient = _fixture.Create<Patient>();
             var email = _fixture.Create<string>();
@@ -149,6 +149,51 @@ namespace Patient_Test
             res.Should().BeAssignableTo<BadRequestObjectResult>();
             _patientLogic.Verify(x => x.DeletePatient(email), Times.AtLeastOnce());
         }
-
+        [Fact]
+        public void GetByEmail()
+        {
+            var patient = _fixture.Create<Patient>();
+            var email = _fixture.Create<String>();
+            _patientLogic.Setup(x => x.GetPatientByEmail(email)).Returns(patient);
+            var res = _controller.getpatientsbyemail(email);
+            res.Should().NotBeNull();
+            res.Should().BeAssignableTo<OkObjectResult>();
+            res.As<OkObjectResult>().Value.Should().NotBeNull().And.BeOfType(patient.GetType());
+            _patientLogic.Verify(x => x.GetPatientByEmail(email), Times.AtLeastOnce());
+        }
+        [Fact]
+        public void GetByEmailExecption()
+        {
+            var patient = _fixture.Create<Patient>();
+            var email = _fixture.Create<string>();
+            _patientLogic.Setup(x => x.GetPatientByEmail(email)).Throws(new Exception("Something went Worng"));
+            var res = _controller.getpatientsbyemail(email);
+            res.Should().BeAssignableTo<BadRequestObjectResult>();
+            _patientLogic.Verify(x => x.GetPatientByEmail(email), Times.AtLeastOnce());
+        }
+        [Fact]
+        public void Login()
+        {
+            var patient = _fixture.Create<Patient>();
+            var email = _fixture.Create<string>();
+            var password = _fixture.Create<string>();
+            _patientLogic.Setup(x => x.LoginPatient(email, password)).Returns(patient);
+            var res = _controller.SignInPatient(email, password);
+            res.Should().NotBeNull();
+            res.Should().BeAssignableTo<OkObjectResult>();
+            res.As<OkObjectResult>().Value.Should().NotBeNull().And.BeOfType(patient.GetType());
+            _patientLogic.Verify(x => x.LoginPatient(email, password), Times.AtLeastOnce());
+        }
+        [Fact]
+        public void LoginExecption()
+        {
+            var patient = _fixture.Create<Patient>();
+            var email = _fixture.Create<string>();
+            var password = _fixture.Create<string>();
+            _patientLogic.Setup(x => x.LoginPatient(email, password)).Throws(new Exception("Something went wrong"));
+            var res = _controller.SignInPatient(email, password);
+            res.Should().BeAssignableTo<BadRequestObjectResult>();
+            _patientLogic.Verify(x => x.LoginPatient(email, password), Times.AtLeastOnce());
+        }
     }
 }
