@@ -26,11 +26,6 @@ namespace Services.Controllers
                     return Ok(alldoctors);
                 }
                 return BadRequest();
-
-            }
-            catch (SqlException e)
-            {
-                return BadRequest(e.Message);
             }
             catch (Exception ex)
             {
@@ -49,10 +44,6 @@ namespace Services.Controllers
                 }
                 return BadRequest();
             }
-            catch (SqlException e)
-            {
-                return BadRequest(e.Message);
-            }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
@@ -69,10 +60,6 @@ namespace Services.Controllers
                     return Ok(Doctor);
                 }
                 return BadRequest();
-            }
-            catch (SqlException e)
-            {
-                return BadRequest(e.Message);
             }
             catch (Exception ex)
             {
@@ -91,10 +78,6 @@ namespace Services.Controllers
                 }
                 return BadRequest("No doctors found");
             }
-            catch (SqlException e)
-            {
-                return BadRequest(e.Message);
-            }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
@@ -106,12 +89,8 @@ namespace Services.Controllers
         {
             try
             {
-                
-                return Ok(_logic.AddDoctor(doctor));
-            }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
+                var response = _logic.AddDoctor(doctor);
+                return Ok(response);
             }
             catch (Exception e)
             {
