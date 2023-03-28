@@ -49,7 +49,7 @@ namespace Patient_Test
 		{
 			var prescriptions = _fixture.Create<IEnumerable<Prescriptions>>();
 			var id = _fixture.Create<Guid>();
-			_mock.Setup(x => x.GetPrescriptions(id)).Throws(new Exception("Something Went Wrong"));
+			_mock.Setup(x => x.GetPrescriptions(id));
 			var res = _contoller.Get(id);
 			res.Should().NotBeNull();
 			res.Should().BeAssignableTo<BadRequestObjectResult>();

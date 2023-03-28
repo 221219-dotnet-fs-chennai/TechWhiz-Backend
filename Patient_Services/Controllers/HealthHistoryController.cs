@@ -38,10 +38,7 @@ namespace Services.Controllers
                     return BadRequest("Something");
                 }
             }
-            catch (SqlException e)
-            {
-                return BadRequest(e.Message);
-            }
+            
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
@@ -64,10 +61,7 @@ namespace Services.Controllers
                     return BadRequest("Someting went wrong");
                 }
             }
-            catch (SqlException e)
-            {
-                return BadRequest(e.Message);
-            }
+
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
