@@ -54,6 +54,15 @@ namespace Patient_Test
             _patientLogic.Verify(x => x.GetPatients(), Times.AtLeastOnce());
 
         }
+        [Fact]
+        public void GetAllCatch()
+        {
+            var patient = _fixture.Create<Patient>();
+            _patientLogic.Setup(x => x.GetPatients()).Throws(new Exception("Something Went Wrong"));
+            var res = _controller.Get();
+            res.Should().BeAssignableTo<BadRequestObjectResult>();
+            _patientLogic.Verify(x => x.GetPatients(), Times.AtLeastOnce());
+        }
 
         [Fact]
         public void GetById()
@@ -72,11 +81,21 @@ namespace Patient_Test
         {
             List<Patient> Patients = null;
             var id = _fixture.Create<Guid>();
-            _patientLogic.Setup(x => x.GetPatientById(id)).Throws(new Exception("Went Worng"));
+            _patientLogic.Setup(x => x.GetPatientById(id)).Throws(new Exception("Something Went Worng"));
             var res = _controller.Get(id);
             res.Should().BeAssignableTo<BadRequestObjectResult>();
             _patientLogic.Verify(x => x.GetPatientById(id), Times.AtLeastOnce());
 
+        }
+        [Fact]
+        public void GetByIdCatch()
+        {
+            var patient = _fixture.Create<Patient>();
+            var id = _fixture.Create<Guid>();
+            _patientLogic.Setup(x => x.GetPatientById(id)).Throws(new Exception("Something Went wrong"));
+            var res = _controller.Get(id);
+            res.Should().BeAssignableTo<BadRequestObjectResult>();
+            _patientLogic.Verify(x => x.GetPatientById(id), Times.AtLeastOnce());
         }
 
         [Fact]
@@ -106,6 +125,17 @@ namespace Patient_Test
 
         }
         [Fact]
+        public void PostCatch()
+        {
+            List<Patient> Patients = null;
+            var req = _fixture.Create<Patient>();
+            _patientLogic.Setup(x => x.AddPatient(req)).Throws(new Exception("Something Went Worng"));
+            var res = _controller.RegisterPat(req);
+            res.Should().BeAssignableTo<BadRequestObjectResult>();
+            _patientLogic.Verify(x => x.AddPatient(req), Times.AtLeastOnce());
+
+        }
+        [Fact]
         public void Put()
         {
             var patient = _fixture.Create<Patient>();
@@ -127,6 +157,8 @@ namespace Patient_Test
             res.Should().BeAssignableTo<BadRequestObjectResult>();
             _patientLogic.Verify(x => x.UpdatePatient(email, patient), Times.AtLeastOnce());
         }
+       
+     
         [Fact]
         public void Delete()
         {
@@ -145,6 +177,16 @@ namespace Patient_Test
             var patient = _fixture.Create<Patient>();
             var email = _fixture.Create<string>();
             _patientLogic.Setup(x => x.DeletePatient(email)).Throws(new Exception("Something went Worng"));
+            var res = _controller.Delete(email);
+            res.Should().BeAssignableTo<BadRequestObjectResult>();
+            _patientLogic.Verify(x => x.DeletePatient(email), Times.AtLeastOnce());
+        }
+        [Fact]
+        public void DeleteCatch()
+        {
+            List<Patient> Patients = null;
+            var email = _fixture.Create<string>();
+            _patientLogic.Setup(x => x.DeletePatient(email)).Throws(new Exception("Something went wrong"));
             var res = _controller.Delete(email);
             res.Should().BeAssignableTo<BadRequestObjectResult>();
             _patientLogic.Verify(x => x.DeletePatient(email), Times.AtLeastOnce());
@@ -172,6 +214,16 @@ namespace Patient_Test
             _patientLogic.Verify(x => x.GetPatientByEmail(email), Times.AtLeastOnce());
         }
         [Fact]
+        public void GetByEmailNull()
+        {
+            List<Patient> Patients = null;
+            var email = _fixture.Create<string>();
+            _patientLogic.Setup(x => x.GetPatientByEmail(email)).Throws(new Exception("Something Went Wrong"));
+            var res = _controller.getpatientsbyemail(email);
+            res.Should().BeAssignableTo<BadRequestObjectResult>();
+            _patientLogic.Verify(x => x.GetPatientByEmail(email), Times.AtLeastOnce());
+        }
+        [Fact]
         public void Login()
         {
             var patient = _fixture.Create<Patient>();
@@ -191,6 +243,17 @@ namespace Patient_Test
             var email = _fixture.Create<string>();
             var password = _fixture.Create<string>();
             _patientLogic.Setup(x => x.LoginPatient(email, password)).Throws(new Exception("Something went wrong"));
+            var res = _controller.SignInPatient(email, password);
+            res.Should().BeAssignableTo<BadRequestObjectResult>();
+            _patientLogic.Verify(x => x.LoginPatient(email, password), Times.AtLeastOnce());
+        }
+        [Fact]
+        public void LoginCatch()
+        {
+            List<Patient> patient = null;
+            var email = _fixture.Create<string>();
+            var password = _fixture.Create<string>();
+            _patientLogic.Setup(x => x.LoginPatient(email, password)).Throws(new Exception("Somwthing Went Wrong"));
             var res = _controller.SignInPatient(email, password);
             res.Should().BeAssignableTo<BadRequestObjectResult>();
             _patientLogic.Verify(x => x.LoginPatient(email, password), Times.AtLeastOnce());
