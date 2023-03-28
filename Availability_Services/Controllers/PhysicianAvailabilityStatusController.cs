@@ -23,10 +23,6 @@ namespace Services.Controllers
                 var avail=_logic.AddAvailability(physicianAvailabilityStatus);
                 return Ok(avail);
             }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
-            }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
@@ -39,10 +35,6 @@ namespace Services.Controllers
             {
                 var updated = _logic.UpdateAvailability(physician);
                 return Ok(updated);
-            }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
             }
             catch (Exception ex)
             {
@@ -57,10 +49,6 @@ namespace Services.Controllers
             {
                 var status = _logic.GetAvailabilityStatus(id);
                 return Ok(status);
-            }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
             }
             catch (Exception ex)
             {
