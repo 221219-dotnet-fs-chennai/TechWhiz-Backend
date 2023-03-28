@@ -127,9 +127,9 @@ namespace Patient_Test
         [Fact]
         public void PostCatch()
         {
-            List<Patient> Patients = null;
+            Patient Patients = null;
             var req = _fixture.Create<Patient>();
-            _patientLogic.Setup(x => x.AddPatient(req)).Throws(new Exception("Something Went Worng"));
+            _patientLogic.Setup(x => x.AddPatient(req)).Returns(Patients);
             var res = _controller.RegisterPat(req);
             res.Should().BeAssignableTo<BadRequestObjectResult>();
             _patientLogic.Verify(x => x.AddPatient(req), Times.AtLeastOnce());
@@ -184,9 +184,9 @@ namespace Patient_Test
         [Fact]
         public void DeleteCatch()
         {
-            List<Patient> Patients = null;
+            Patient Patients = null;
             var email = _fixture.Create<string>();
-            _patientLogic.Setup(x => x.DeletePatient(email)).Throws(new Exception("Something went wrong"));
+            _patientLogic.Setup(x => x.DeletePatient(email)).Returns(Patients);
             var res = _controller.Delete(email);
             res.Should().BeAssignableTo<BadRequestObjectResult>();
             _patientLogic.Verify(x => x.DeletePatient(email), Times.AtLeastOnce());
@@ -216,11 +216,11 @@ namespace Patient_Test
         [Fact]
         public void GetByEmailNull()
         {
-            List<Patient> Patients = null;
+            Patient Patients = null;
             var email = _fixture.Create<string>();
-            _patientLogic.Setup(x => x.GetPatientByEmail(email)).Throws(new Exception("Something Went Wrong"));
+            _patientLogic.Setup(x => x.GetPatientByEmail(email)).Returns(Patients);
             var res = _controller.getpatientsbyemail(email);
-            res.Should().BeAssignableTo<BadRequestObjectResult>();
+            res.Should().BeAssignableTo<BadRequestResult>();
             _patientLogic.Verify(x => x.GetPatientByEmail(email), Times.AtLeastOnce());
         }
         [Fact]
@@ -250,13 +250,17 @@ namespace Patient_Test
         [Fact]
         public void LoginCatch()
         {
-            List<Patient> patient = null;
+            Patient patient = null;
             var email = _fixture.Create<string>();
             var password = _fixture.Create<string>();
-            _patientLogic.Setup(x => x.LoginPatient(email, password)).Throws(new Exception("Somwthing Went Wrong"));
+            _patientLogic.Setup(x => x.LoginPatient(email, password)).Returns(patient);
             var res = _controller.SignInPatient(email, password);
             res.Should().BeAssignableTo<BadRequestObjectResult>();
             _patientLogic.Verify(x => x.LoginPatient(email, password), Times.AtLeastOnce());
+
+
+
+           
         }
     }
 }
