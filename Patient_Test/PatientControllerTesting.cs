@@ -79,13 +79,12 @@ namespace Patient_Test
         [Fact]
         public void GetByIdExecption()
         {
-            List<Patient> Patients = null;
+            Patient Patients = null;
             var id = _fixture.Create<Guid>();
-            _patientLogic.Setup(x => x.GetPatientById(id)).Throws(new Exception("Something Went Worng"));
+            _patientLogic.Setup(x => x.GetPatientById(id)).Returns(Patients);
             var res = _controller.Get(id);
-            res.Should().BeAssignableTo<BadRequestObjectResult>();
+            res.Should().BeAssignableTo<BadRequestResult>();
             _patientLogic.Verify(x => x.GetPatientById(id), Times.AtLeastOnce());
-
         }
         [Fact]
         public void GetByIdCatch()
@@ -116,7 +115,7 @@ namespace Patient_Test
         {
             var req = _fixture.Create<Patient>();
 
-            _patientLogic.Setup(x => x.AddPatient(req));
+            _patientLogic.Setup(x => x.AddPatient(req)).Throws(new Exception("Something Went Wrong"));
 
             var result = _controller.RegisterPat(req);
             result.Should().NotBeNull();
