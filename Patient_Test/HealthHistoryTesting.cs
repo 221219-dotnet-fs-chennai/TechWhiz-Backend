@@ -38,10 +38,23 @@ namespace Patient_Test
 		{
             List<HealthHistory> history = null;
 			var id = _fixture.Create<Guid>();
-			_mock.Setup(x => x.GetHealthHistory(id)).Throws(new Exception("Something Went wrong"));
+			_mock.Setup(x => x.GetHealthHistory(id)).Returns(history);
 			var res = _controller.Get(id);
 			res.Should().BeAssignableTo<BadRequestObjectResult>();
 			_mock.Verify(x => x.GetHealthHistory(id), Times.AtLeastOnce());
+        }
+		[Fact]
+		public void GetByIdCatch()
+		{
+			var history = _fixture.Create<IEnumerable<HealthHistory>>();
+			var id = _fixture.Create<Guid>();
+			_mock.Setup(x => x.GetHealthHistory(id)).Throws(new Exception("Something Went Wrong"));
+			var res = _controller.Get(id);
+			res.Should().NotBeNull();
+            res.Should().BeAssignableTo<BadRequestObjectResult>();
+            _mock.Verify(x => x.GetHealthHistory(id), Times.AtLeastOnce());
+
+
         }
 		[Fact]
 		public void Post()
@@ -52,6 +65,19 @@ namespace Patient_Test
 			res.Should().NotBeNull();
 			res.Should().BeAssignableTo<OkObjectResult>();
 			_mock.Verify(x => x.AddHealthHistory(req), Times.AtLeastOnce());
+		}
+		[Fact]
+		public void PostCatch()
+		{
+			HealthHistory histories = null;
+			var req = _fixture.Create<HealthHistory>();
+			_mock.Setup(x => x.AddHealthHistory(req)).Throws(new Exception("Something Went Wrong"));
+			var res = _controller.Post(req);
+			res.Should().NotBeNull();
+			res.Should().BeAssignableTo<BadRequestObjectResult>();
+			_mock.Verify(x => x.AddHealthHistory(req), Times.AtLeastOnce());
+
+
 		}
 		[Fact]
 		public void PostExecption()
