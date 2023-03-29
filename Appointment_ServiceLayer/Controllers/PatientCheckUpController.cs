@@ -31,10 +31,7 @@ namespace ServiceLayer.Controllers
                     return NoContent();
                 }
             }
-            catch (SqlException e)
-            {
-                return BadRequest(e.Message);
-            }
+            
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
@@ -53,10 +50,7 @@ namespace ServiceLayer.Controllers
                 var r=_logic.AddCheckUpDetails(patientIntialCheckup);
                 return Ok(r);
             }
-            catch (SqlException ex)
-            {
-                return BadRequest(ex.Message);
-            }
+           
             catch (Exception e)
             {
                 return BadRequest(e.Message);

@@ -107,9 +107,26 @@ namespace Appointment_TestAppointment
            
         }
 
-       
-       
+        [Fact]
+        public void GetAppointmentsAfterCheckup_OkResponse_Test()
+        {
+            var appointment = fixture.Create<IEnumerable<Models.Appointment>>();
+            var doctor_id=fixture.Create<Guid>();
+            var date = fixture.Create<DateTime>();
+            string date1 = "2023-03-27";
 
+
+            _appointment.Setup(x=>x.GetAppointmentsAfterCheckup(date,doctor_id)).Returns(appointment);
+            var result = controller.GetAppointmentsAfterCheckup(doctor_id, date1);
+
+            result.Should().NotBeNull();
+            result.Should().BeAssignableTo<OkObjectResult>();
+           /* result.As<OkObjectResult>().Value.Should().NotBeNull().And.BeOfType(appointment.GetType());
+            _appointment.Verify(x => x.GetAppointmentsAfterCheckup(date, doctor_id), Times.AtLeastOnce);*/
+
+        }
+
+        
         [Fact]
         public void AddAppointment_OkResponse_Test()
         {
