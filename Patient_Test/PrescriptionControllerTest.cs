@@ -45,6 +45,18 @@ namespace Patient_Test
 			_mock.Verify(x => x.GetPrescriptions(id), Times.AtLeastOnce());
 		}
 		[Fact]
+		public void GetByIdCatch()
+		{
+			var prescriptions = _fixture.Create<IEnumerable<Prescriptions>>();
+			var id = _fixture.Create<Guid>();
+			_mock.Setup(x => x.GetPrescriptions(id));
+			var res = _contoller.Get(id);
+			res.Should().NotBeNull();
+			res.Should().BeAssignableTo<BadRequestObjectResult>();
+			_mock.Verify(x => x.GetPrescriptions(id), Times.AtLeastOnce());
+
+		}
+		[Fact]
 		public void Post()
 		{
 			var req = _fixture.Create<Prescriptions>();
@@ -59,6 +71,17 @@ namespace Patient_Test
 		{
 			var req = _fixture.Create<Prescriptions>();
 			_mock.Setup(x => x.AddPrescriptions(req));
+			var res = _contoller.Post(req);
+			res.Should().NotBeNull();
+			res.Should().BeAssignableTo<BadRequestObjectResult>();
+			_mock.Verify(x => x.AddPrescriptions(req), Times.AtLeastOnce());
+		}
+		[Fact]
+		public void PostCathc()
+		{
+			Prescriptions prescriptions = null;
+			var req = _fixture.Create<Prescriptions>();
+			_mock.Setup(x => x.AddPrescriptions(req)).Throws(new Exception("Something went wrong"));
 			var res = _contoller.Post(req);
 			res.Should().NotBeNull();
 			res.Should().BeAssignableTo<BadRequestObjectResult>();
