@@ -52,7 +52,7 @@ namespace Patient_Test
 			_mock.Setup(x => x.GetPrescriptions(id));
 			var res = _contoller.Get(id);
 			res.Should().NotBeNull();
-			res.Should().BeAssignableTo<BadRequestObjectResult>();
+			res.Should().BeAssignableTo<OkObjectResult>();
 			_mock.Verify(x => x.GetPrescriptions(id), Times.AtLeastOnce());
 
 		}

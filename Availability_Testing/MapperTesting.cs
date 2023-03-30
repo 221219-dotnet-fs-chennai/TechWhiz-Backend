@@ -33,5 +33,12 @@ namespace Testing
             var actual = Mapper.mapPhysicianAvailabilityStatus(phyStatus);
             Assert.That(actual.GetType(), Is.EqualTo(typeof(DataEntities.Entities.PhysicianAvailabilityStatus)));
         }
+        [Test]
+        public void TestDoctorList()
+        {
+            List<DataEntities.Entities.Doctor> doc = new List<DataEntities.Entities.Doctor>();
+            var dc = Mapper.MapDoctor(doc);
+            Assert.That(typeof(List<Models.Doctor>), Is.EqualTo(dc.GetType()));
+        }
     }
 }

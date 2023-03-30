@@ -45,7 +45,7 @@ namespace Patient_Logic
 
         public static IEnumerable<Models.Patient> Map(IEnumerable<Patient> patients)
         {
-            return patients.Select(Map);
+            return patients.Select(Map).ToList();
         }
 
         public static Models.HealthHistory Map(HealthHistory hh)
@@ -76,7 +76,7 @@ namespace Patient_Logic
 
         public static IEnumerable<Models.HealthHistory> Map(IEnumerable<HealthHistory> hh)
         {
-            return hh.Select(Map);
+            return hh.Select(Map).ToList();
         }
 
         public static Models.Prescriptions Map(Prescription p)
@@ -105,7 +105,7 @@ namespace Patient_Logic
 
         public static IEnumerable<Models.Prescriptions> Map(IEnumerable<Prescription> p)
         {
-            return p.Select(Map);
+            return p.Select(Map).ToList();
         }
     }
 }

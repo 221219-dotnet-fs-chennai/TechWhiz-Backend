@@ -22,5 +22,13 @@ namespace Testing
             var ale=Mapper.AllergyMapper(allle);
             Assert.That(typeof(Models.Allergy), Is.EqualTo(ale.GetType()));
         }
+
+        [Test]
+        public void TestMap3()
+        {
+            List<EF.Allergy> allle = new List<EF.Allergy>();
+            var ale = Mapper.AllergyMapper(allle);
+            Assert.That(typeof(List<Models.Allergy>), Is.EqualTo(ale.GetType()));
+        }
     }
 }
