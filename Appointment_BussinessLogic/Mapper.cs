@@ -30,7 +30,7 @@ namespace BussinessLogic
 
         public static IEnumerable<Models.Appointment> Map(IEnumerable<DataEntities.Entities.Appointment> appointments)
         {
-            return appointments.Select(Map);
+            return appointments.Select(Map).ToList();
         }
 
 
@@ -72,7 +72,7 @@ namespace BussinessLogic
 
         public static IEnumerable<Models.PatientIntialCheckUp> Map(IEnumerable<DataEntities.Entities.PatientIntialCheckup> patientIntials)
         {
-            return patientIntials.Select(Map);
+            return patientIntials.Select(Map).ToList();
         }
         public static DataEntities.Entities.PatientIntialCheckup Map(Models.PatientIntialCheckUp p)
         {

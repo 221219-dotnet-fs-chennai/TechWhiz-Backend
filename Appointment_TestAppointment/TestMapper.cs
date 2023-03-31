@@ -25,6 +25,13 @@ namespace TestAppointment
             Assert.That(typeof(Models.Appointment), Is.EqualTo(appo.GetType()));
         }
         [Test]
+        public void TestAppointmentList()
+        {
+            List<EF.Appointment> app = new List<EF.Appointment>();
+            var appm = Mapper.Map(app);
+            Assert.That(typeof(List<Models.Appointment>), Is.EqualTo(appm.GetType()));
+        }
+        [Test]
         public void TestPatient()
         {
             EF.PatientIntialCheckup p=new EF.PatientIntialCheckup();
@@ -37,6 +44,14 @@ namespace TestAppointment
             Models.PatientIntialCheckUp pc=new Models.PatientIntialCheckUp();
             var pp=Mapper.Map(pc);
             Assert.That(typeof(EF.PatientIntialCheckup), Is.EqualTo(pp.GetType())); 
+        }
+
+        [Test]
+        public void TestPatientCheckupList()
+        {
+            List<EF.PatientIntialCheckup> pics = new List<EF.PatientIntialCheckup>();
+            var pic = Mapper.Map(pics);
+            Assert.That(typeof(List<Models.PatientIntialCheckUp>), Is.EqualTo(pic.GetType()));
         }
 
     }
