@@ -373,6 +373,18 @@
             "Port": 7225
           }
         ]
+      },
+      {
+        "UpstreamPathTemplate": "/Whizcare/Audit/AddAudit",
+        "UpstreamHttpMethod": [ "POST" ],
+        "DownstreamPathTemplate": "/api/Audit/AddAudit",
+        "DownstreamScheme": "https",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 7157
+          }
+        ]
       }
     ],
   "GlobalConfiguration": {

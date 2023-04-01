@@ -1,0 +1,17 @@
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_BusinessLogic/obj/Debug/net7.0/Audit_BusinessLogic.csproj.AssemblyReference.cache
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_BusinessLogic/obj/Debug/net7.0/Audit_BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_BusinessLogic/obj/Debug/net7.0/Audit_BusinessLogic.AssemblyInfoInputs.cache
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_BusinessLogic/obj/Debug/net7.0/Audit_BusinessLogic.AssemblyInfo.cs
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_BusinessLogic/obj/Debug/net7.0/Audit_BusinessLogic.csproj.CoreCompileInputs.cache
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_BusinessLogic/bin/Debug/net7.0/Audit_BusinessLogic.deps.json
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_BusinessLogic/bin/Debug/net7.0/Audit_BusinessLogic.dll
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_BusinessLogic/bin/Debug/net7.0/Audit_BusinessLogic.pdb
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_BusinessLogic/bin/Debug/net7.0/Audit_DataEntites.dll
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_BusinessLogic/bin/Debug/net7.0/Audit_Models.dll
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_BusinessLogic/bin/Debug/net7.0/Audit_Models.pdb
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_BusinessLogic/bin/Debug/net7.0/Audit_DataEntites.pdb
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_BusinessLogic/obj/Debug/net7.0/Audit_BusinessLogic.csproj.CopyComplete
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_BusinessLogic/obj/Debug/net7.0/Audit_BusinessLogic.dll
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_BusinessLogic/obj/Debug/net7.0/refint/Audit_BusinessLogic.dll
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_BusinessLogic/obj/Debug/net7.0/Audit_BusinessLogic.pdb
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_BusinessLogic/obj/Debug/net7.0/ref/Audit_BusinessLogic.dll
