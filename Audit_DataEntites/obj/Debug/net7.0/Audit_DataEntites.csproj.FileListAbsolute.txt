@@ -1,0 +1,14 @@
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_DataEntites/bin/Debug/net7.0/Audit_DataEntites.deps.json
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_DataEntites/bin/Debug/net7.0/Audit_DataEntites.runtimeconfig.json
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_DataEntites/bin/Debug/net7.0/Audit_DataEntites.dll
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_DataEntites/bin/Debug/net7.0/Audit_DataEntites.pdb
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_DataEntites/obj/Debug/net7.0/Audit_DataEntites.csproj.AssemblyReference.cache
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_DataEntites/obj/Debug/net7.0/Audit_DataEntites.GeneratedMSBuildEditorConfig.editorconfig
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_DataEntites/obj/Debug/net7.0/Audit_DataEntites.AssemblyInfoInputs.cache
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_DataEntites/obj/Debug/net7.0/Audit_DataEntites.AssemblyInfo.cs
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_DataEntites/obj/Debug/net7.0/Audit_DataEntites.csproj.CoreCompileInputs.cache
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_DataEntites/obj/Debug/net7.0/Audit_DataEntites.dll
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_DataEntites/obj/Debug/net7.0/refint/Audit_DataEntites.dll
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_DataEntites/obj/Debug/net7.0/Audit_DataEntites.pdb
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_DataEntites/obj/Debug/net7.0/Audit_DataEntites.genruntimeconfig.cache
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_DataEntites/obj/Debug/net7.0/ref/Audit_DataEntites.dll

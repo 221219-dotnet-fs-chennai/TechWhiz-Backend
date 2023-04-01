@@ -1,0 +1,276 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_Service/Audit_Service.csproj": {}
+  },
+  "projects": {
+    "/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_BusinessLogic/Audit_BusinessLogic.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_BusinessLogic/Audit_BusinessLogic.csproj",
+        "projectName": "Audit_BusinessLogic",
+        "projectPath": "/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_BusinessLogic/Audit_BusinessLogic.csproj",
+        "packagesPath": "/Users/dhanushreddy/.nuget/packages/",
+        "outputPath": "/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_BusinessLogic/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/dhanushreddy/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_DataEntites/Audit_DataEntites.csproj": {
+                "projectPath": "/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_DataEntites/Audit_DataEntites.csproj"
+              },
+              "/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_Models/Audit_Models.csproj": {
+                "projectPath": "/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_Models/Audit_Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_DataEntites/Audit_DataEntites.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_DataEntites/Audit_DataEntites.csproj",
+        "projectName": "Audit_DataEntites",
+        "projectPath": "/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_DataEntites/Audit_DataEntites.csproj",
+        "packagesPath": "/Users/dhanushreddy/.nuget/packages/",
+        "outputPath": "/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_DataEntites/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/dhanushreddy/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_Models/Audit_Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_Models/Audit_Models.csproj",
+        "projectName": "Audit_Models",
+        "projectPath": "/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_Models/Audit_Models.csproj",
+        "packagesPath": "/Users/dhanushreddy/.nuget/packages/",
+        "outputPath": "/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_Models/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/dhanushreddy/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_Service/Audit_Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_Service/Audit_Service.csproj",
+        "projectName": "Audit_Service",
+        "projectPath": "/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_Service/Audit_Service.csproj",
+        "packagesPath": "/Users/dhanushreddy/.nuget/packages/",
+        "outputPath": "/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_Service/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/dhanushreddy/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_BusinessLogic/Audit_BusinessLogic.csproj": {
+                "projectPath": "/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_BusinessLogic/Audit_BusinessLogic.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.4, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

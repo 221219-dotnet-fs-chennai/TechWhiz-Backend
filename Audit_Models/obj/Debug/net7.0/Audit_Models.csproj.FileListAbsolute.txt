@@ -1,0 +1,12 @@
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_Models/bin/Debug/net7.0/Audit_Models.deps.json
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_Models/bin/Debug/net7.0/Audit_Models.dll
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_Models/bin/Debug/net7.0/Audit_Models.pdb
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_Models/obj/Debug/net7.0/Audit_Models.csproj.AssemblyReference.cache
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_Models/obj/Debug/net7.0/Audit_Models.GeneratedMSBuildEditorConfig.editorconfig
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_Models/obj/Debug/net7.0/Audit_Models.AssemblyInfoInputs.cache
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_Models/obj/Debug/net7.0/Audit_Models.AssemblyInfo.cs
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_Models/obj/Debug/net7.0/Audit_Models.csproj.CoreCompileInputs.cache
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_Models/obj/Debug/net7.0/Audit_Models.dll
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_Models/obj/Debug/net7.0/refint/Audit_Models.dll
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_Models/obj/Debug/net7.0/Audit_Models.pdb
+/Users/dhanushreddy/Desktop/TechWhiz-Backend/Audit_Models/obj/Debug/net7.0/ref/Audit_Models.dll
