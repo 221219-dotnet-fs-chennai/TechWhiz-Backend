@@ -3,6 +3,8 @@ public class Audit_Data
 {
     public Guid Id { get; set; }
 
+    public string? PatientEmail { get; set; }
+
     public string? PatientnameFirstName { get; set; }
 
     public string? PatientnameLastName { get; set; }
@@ -11,7 +13,7 @@ public class Audit_Data
 
     public string? DoctorName { get; set; }
 
-    public string? Diagnosis { get; set; }
+    public string? Dignosis { get; set; }
 
     public int? Height { get; set; }
 
@@ -28,8 +30,5 @@ public class Audit_Data
     public string? AdditioanlDetails { get; set; }
 
     public string? Allergies { get; set; }
-
-  
-
 }
 

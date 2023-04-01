@@ -7,6 +7,8 @@ public partial class AuditDatum
 {
     public Guid Id { get; set; }
 
+    public string? PatientEmail { get; set; }
+
     public string? PatientnameFirstName { get; set; }
 
     public string? PatientnameLastName { get; set; }
@@ -15,7 +17,7 @@ public partial class AuditDatum
 
     public string? DoctorName { get; set; }
 
-    public string? Diagnosis { get; set; }
+    public string? Dignosis { get; set; }
 
     public int? Height { get; set; }
 

@@ -23,10 +23,6 @@ namespace Services.Controllers
                 var allergyList = logic.GetAllAllergies(appointmentid);
                 return Ok(allergyList);
             }
-            catch (SqlException e)
-            {
-                return BadRequest(e.Message);
-            }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
@@ -38,10 +34,6 @@ namespace Services.Controllers
             try
             {
                 return Ok(logic.addPatientAllergy(allergy));
-            }
-            catch (SqlException e)
-            {
-                return BadRequest(e.Message);
             }
             catch (Exception ex)
             {
