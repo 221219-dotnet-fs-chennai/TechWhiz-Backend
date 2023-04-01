@@ -12,9 +12,10 @@ namespace Audit_BusinessLogic
 				Id = audit.Id,
 				PatientnameFirstName = audit.PatientnameFirstName,
 				PatientnameLastName = audit.PatientnameLastName,
+				PatientEmail =audit.PatientEmail,
 				Date = audit.Date,
 				DoctorName = audit.DoctorName,
-				Diagnosis = audit.Diagnosis,
+                Dignosis = audit.Dignosis,
 				Height = audit.Height,
 				Weight = audit.Weight,
 				Temperature = audit.Temperature,
@@ -33,9 +34,10 @@ namespace Audit_BusinessLogic
 				Id = audit.Id,
 				PatientnameFirstName = audit.PatientnameFirstName,
 				PatientnameLastName = audit.PatientnameLastName,
+				PatientEmail = audit.PatientEmail,
 				Date = audit.Date,
 				DoctorName = audit.DoctorName,
-				Diagnosis = audit.Diagnosis,
+                Dignosis = audit.Dignosis,
 				Height = audit.Height,
 				Weight = audit.Weight,
 				Temperature = audit.Temperature,
@@ -47,11 +49,7 @@ namespace Audit_BusinessLogic
 				
 			};
 		}
-		public static IEnumerable<M.Audit_Data> AuditMapper(IEnumerable<df.AuditDatum> audits)
-		{
-			return audits.Select(AuditMapper);
-		}
-
+		
 
     }
 }

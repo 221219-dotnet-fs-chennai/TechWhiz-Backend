@@ -25,21 +25,26 @@ public partial class AuditDbContext : DbContext
     {
         modelBuilder.Entity<AuditDatum>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__auditDat__3214EC07B5F6DCAC");
+            entity.HasKey(e => e.Id).HasName("PK__auditDat__3213E83F376B5350");
 
             entity.ToTable("auditData");
 
-            entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
+            entity.Property(e => e.Id)
+                .HasDefaultValueSql("(newid())")
+                .HasColumnName("id");
             entity.Property(e => e.AdditioanlDetails).IsUnicode(false);
             entity.Property(e => e.Allergies).IsUnicode(false);
             entity.Property(e => e.BloodPressure)
-                .HasMaxLength(10)
+                .HasMaxLength(20)
                 .IsUnicode(false);
             entity.Property(e => e.Date)
                 .HasMaxLength(20)
                 .IsUnicode(false);
-            entity.Property(e => e.Diagnosis).IsUnicode(false);
+            entity.Property(e => e.Dignosis).IsUnicode(false);
             entity.Property(e => e.DoctorName)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.PatientEmail)
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.PatientnameFirstName)
