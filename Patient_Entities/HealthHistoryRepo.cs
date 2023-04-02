@@ -20,8 +20,9 @@ namespace DataEntities
         public List<HealthHistory> GetHealthHistory(Guid patientId)
         {
             var h=(from hh in context.HealthHistories
+                   orderby hh.Date descending
                    where hh.PatientId == patientId
-                   select hh).ToList();
+                   select hh ).ToList();
             return h;
         }
      
