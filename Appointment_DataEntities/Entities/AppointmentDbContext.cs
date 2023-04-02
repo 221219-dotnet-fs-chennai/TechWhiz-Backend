@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace DataEntities.Entities;
+namespace Appointment_DataEntities.Entities;
 
 public partial class AppointmentDbContext : DbContext
 {
@@ -19,6 +19,10 @@ public partial class AppointmentDbContext : DbContext
 
     public virtual DbSet<PatientIntialCheckup> PatientIntialCheckups { get; set; }
 
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("Server=tcp:appointmentserver.database.windows.net,1433;Initial Catalog=AppointmentDb;Persist Security Info=False;User ID=appointments;Password=Password@123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Appointment>(entity =>
@@ -28,6 +32,9 @@ public partial class AppointmentDbContext : DbContext
             entity.Property(e => e.AppointmentId)
                 .HasDefaultValueSql("(newid())")
                 .HasColumnName("Appointment_Id");
+            entity.Property(e => e.CheckupStatus)
+                .HasDefaultValueSql("((0))")
+                .HasColumnName("Checkup_Status");
             entity.Property(e => e.Concerns).IsUnicode(false);
             entity.Property(e => e.Date).HasColumnType("date");
             entity.Property(e => e.DoctorId).HasColumnName("Doctor_Id");
@@ -56,7 +63,6 @@ public partial class AppointmentDbContext : DbContext
                 .HasMaxLength(10)
                 .IsUnicode(false)
                 .HasColumnName("Blood_Pressure");
-            entity.Property(e => e.ChechupStatus).HasDefaultValueSql("((0))");
             entity.Property(e => e.SugarLevel).HasColumnName("Sugar_level");
 
             entity.HasOne(d => d.Appointment).WithMany(p => p.PatientIntialCheckups)

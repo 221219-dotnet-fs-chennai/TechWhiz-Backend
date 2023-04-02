@@ -1,6 +1,6 @@
 using System;
 using Models;
-using EF = DataEntities.Entities;
+using EF = Appointment_DataEntities.Entities;
 using BussinessLogic;
 
 namespace TestAppointment

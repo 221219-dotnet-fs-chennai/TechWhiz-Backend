@@ -4,7 +4,7 @@ using Moq;
 using Xunit;
 using ServiceLayer.Controllers;
 using System.Collections.Generic;
-using DataEntities.Entities;
+using Appointment_DataEntities.Entities;
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc;
 using Models;

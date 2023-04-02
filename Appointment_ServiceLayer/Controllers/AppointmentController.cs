@@ -1,5 +1,5 @@
 ﻿using BussinessLogic;
-using DataEntities.Entities;
+
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
@@ -142,6 +142,22 @@ namespace ServiceLayer.Controllers
                 return Ok(result);
             }
             
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPut("UpdateCheckUp")]
+        public IActionResult UpdateCheckUpStatus(Guid AppointmentId, bool status1)
+        {
+            try
+            {
+
+                var result = _logic.UpdateCheckUpStatus(AppointmentId, status1);
+                return Ok(result);
+            }
+
             catch (Exception e)
             {
                 return BadRequest(e.Message);

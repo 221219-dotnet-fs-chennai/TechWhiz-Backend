@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataEntities;
-using DataEntities.Entities;
+using Appointment_DataEntities.Entities;
 using Microsoft.EntityFrameworkCore;
 using Models;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Model;
@@ -58,6 +58,15 @@ namespace BussinessLogic
 
             return Mapper.Map(repo.UpdateStatus(search));
         }
+        public Models.Appointment UpdateCheckUpStatus(Guid appointment_id, bool status)
+        {
+            var search = context.Appointments.Where(item => item.AppointmentId == appointment_id).First();
+
+            search.CheckupStatus = status;
+
+            return Mapper.Map(repo.UpdateCheckUpStatus(search));
+        }
+
 
         public IEnumerable<Models.Appointment> GetAppointmentsAfterCheckup(DateTime date, Guid doctor_id)
         {

@@ -1,5 +1,5 @@
 ﻿using BussinessLogic;
-using DataEntities.Entities;
+using Appointment_DataEntities.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;

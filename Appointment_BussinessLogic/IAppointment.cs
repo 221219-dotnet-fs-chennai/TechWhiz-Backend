@@ -17,6 +17,8 @@ namespace BussinessLogic
         public IEnumerable<Models.Appointment> GetAppointmentsAfterCheckup(DateTime date,Guid doctor_id);
 
         public Models.Appointment UpdateStatus(Guid appointment_id,string status);
+        public Models.Appointment UpdateCheckUpStatus(Guid appointment_id, bool status);
+
 
         public Models.Appointment AddAppointment(Models.Appointment appointment);
 

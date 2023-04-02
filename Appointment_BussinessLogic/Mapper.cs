@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Models;
+using ad=Appointment_DataEntities.Entities;
 
 
 
@@ -12,7 +13,7 @@ namespace BussinessLogic
     public static class Mapper
     {
       
-        public static Models.Appointment Map(DataEntities.Entities.Appointment a)
+        public static Models.Appointment Map(ad.Appointment a)
         {
             return new Models.Appointment()
             {
@@ -22,21 +23,22 @@ namespace BussinessLogic
                 Date=a.Date,
                 DoctorName=a.DoctorName,
                 Concerns=a.Concerns,
-                Status=a.Status
+                Status=a.Status,
+                CheckupStatus=a.CheckupStatus,
                 
 
             };
         }
 
-        public static IEnumerable<Models.Appointment> Map(IEnumerable<DataEntities.Entities.Appointment> appointments)
+        public static IEnumerable<Models.Appointment> Map(IEnumerable<ad.Appointment> appointments)
         {
             return appointments.Select(Map).ToList();
         }
 
 
-        public static DataEntities.Entities.Appointment Map(Models.Appointment a)
+        public static ad.Appointment Map(Models.Appointment a)
         {
-            return new DataEntities.Entities.Appointment()
+            return new ad.Appointment()
             {
                 AppointmentId = a.AppointmentId,
                 PatientId = a.PatientId,
@@ -44,14 +46,16 @@ namespace BussinessLogic
                 Date = a.Date,
                 DoctorName = a.DoctorName,
                 Concerns = a.Concerns,
-                Status = a.Status
+                Status = a.Status,
+                CheckupStatus=a.CheckupStatus,
+                
             };
         }
 
 
         //------------------------------------------------PatientMapper-----------------------------------------------------------------------------
 
-        public static Models.PatientIntialCheckUp Map(DataEntities.Entities.PatientIntialCheckup p)
+        public static Models.PatientIntialCheckUp Map(ad.PatientIntialCheckup p)
         {
             return new Models.PatientIntialCheckUp()
             {
@@ -64,19 +68,18 @@ namespace BussinessLogic
                BloodPressure=p.BloodPressure,
                SugarLevel=p.SugarLevel,
                AdditionalDetails=p.AdditionalDetails,
-               ChechupStatus=p.ChechupStatus
 
 
             };
         }
 
-        public static IEnumerable<Models.PatientIntialCheckUp> Map(IEnumerable<DataEntities.Entities.PatientIntialCheckup> patientIntials)
+        public static IEnumerable<Models.PatientIntialCheckUp> Map(IEnumerable<ad.PatientIntialCheckup> patientIntials)
         {
             return patientIntials.Select(Map).ToList();
         }
-        public static DataEntities.Entities.PatientIntialCheckup Map(Models.PatientIntialCheckUp p)
+        public static ad.PatientIntialCheckup Map(Models.PatientIntialCheckUp p)
         {
-            return new DataEntities.Entities.PatientIntialCheckup()
+            return new ad.PatientIntialCheckup()
             {
                 PicId = p.PicId,
                 AppointmentId = p.AppointmentId,
@@ -86,10 +89,7 @@ namespace BussinessLogic
                 Spo2 = p.Spo2,
                 BloodPressure = p.BloodPressure,
                 SugarLevel = p.SugarLevel,
-                AdditionalDetails = p.AdditionalDetails,
-                ChechupStatus = p.ChechupStatus
-
-
+                AdditionalDetails = p.AdditionalDetails
 
             };
         }

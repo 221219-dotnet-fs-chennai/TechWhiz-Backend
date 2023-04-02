@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Xunit;
 using FluentAssertions;
 using Models;
-using DataEntities.Entities;
+using Appointment_DataEntities.Entities;
 using Microsoft.AspNetCore.Mvc;
 using ServiceLayer.Controllers;
 
