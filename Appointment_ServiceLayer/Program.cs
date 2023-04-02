@@ -1,6 +1,6 @@
 using BussinessLogic;
 using DataEntities;
-using DataEntities.Entities;
+using Appointment_DataEntities.Entities;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

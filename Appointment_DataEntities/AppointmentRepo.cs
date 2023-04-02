@@ -1,4 +1,4 @@
-﻿using DataEntities.Entities;
+﻿using Appointment_DataEntities.Entities;
 using Microsoft.EntityFrameworkCore;
 using System.Net.Mail;
 using System.Net;
@@ -72,13 +72,13 @@ namespace DataEntities
 
         public List<Appointment> GetAppointmentsByDate(DateTime date)
         {
-            var find = context.Appointments.Where(a => a.Date == date.Date && a.Status == "Accepted").ToList();
+            var find = context.Appointments.Where(a => a.Date == date.Date && a.Status == "Accepted" && a.CheckupStatus==false).ToList();
             return find;
         }
 
         public List<Appointment> GetAppointmentsByDoctor(Guid doctor_id, string status)
         {
-            return context.Appointments.Where(a => a.DoctorId == doctor_id && a.Status == status).ToList();
+            return context.Appointments.Where(a => a.DoctorId == doctor_id && a.Status == status ).ToList();
         }
 
         public IEnumerable<Appointment> GetAppointmentsAfterCheckup(DateTime date, Guid doctor_id)
@@ -88,7 +88,8 @@ namespace DataEntities
                       on a.AppointmentId equals c.AppointmentId
                       where a.DoctorId==doctor_id
                       && a.Date==date.Date
-                      && c.ChechupStatus==true
+                      && a.CheckupStatus==true
+                      && a.Status=="Accepted"
                       select a).ToList();
             return apps;
         }
@@ -104,6 +105,12 @@ namespace DataEntities
 
 
         public Appointment UpdateStatus(Appointment appointment)
+        {
+            context.Appointments.Update(appointment);
+            context.SaveChanges();
+            return appointment;
+        }
+        public Appointment UpdateCheckUpStatus(Appointment appointment)
         {
             context.Appointments.Update(appointment);
             context.SaveChanges();

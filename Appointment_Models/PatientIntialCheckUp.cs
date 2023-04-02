@@ -26,9 +26,7 @@ namespace Models
 
         public string? AdditionalDetails { get; set; }
 
-        public bool? ChechupStatus { get; set; }
 
-        
     }
 
 }

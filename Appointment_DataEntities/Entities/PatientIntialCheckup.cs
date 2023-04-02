@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DataEntities.Entities;
+namespace Appointment_DataEntities.Entities;
 
 public partial class PatientIntialCheckup
 {
@@ -22,8 +22,6 @@ public partial class PatientIntialCheckup
     public int? SugarLevel { get; set; }
 
     public string? AdditionalDetails { get; set; }
-
-    public bool? ChechupStatus { get; set; }
 
     public virtual Appointment? Appointment { get; set; }
 }

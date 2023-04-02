@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DataEntities.Entities;
+namespace Appointment_DataEntities.Entities;
 
 public partial class Appointment
 {
@@ -18,6 +18,8 @@ public partial class Appointment
     public string? Concerns { get; set; }
 
     public string? Status { get; set; }
+
+    public bool? CheckupStatus { get; set; }
 
     public virtual ICollection<PatientIntialCheckup> PatientIntialCheckups { get; } = new List<PatientIntialCheckup>();
 }

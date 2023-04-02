@@ -16,5 +16,7 @@
 
         public string? Status { get; set; }
 
+        public bool? CheckupStatus { get; set; }
+
     }
 }
