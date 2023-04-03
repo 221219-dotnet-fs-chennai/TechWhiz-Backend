@@ -18,7 +18,10 @@ namespace DataEntities
 
         public List<Patient> GetAllPatient()
         {
-            return context.Patients.ToList();
+            var pa=(from p in context.Patients
+                    where p.FirstName != null orderby p.FirstName
+                    select p).ToList();
+            return pa;
         }
 
         public Patient DeletePatient(string email)
