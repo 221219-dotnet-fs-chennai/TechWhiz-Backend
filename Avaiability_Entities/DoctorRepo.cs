@@ -24,7 +24,11 @@ namespace DataEntities
 
         public List<Doctor> GetAllDoctors()
         {
-            return context.Doctors.ToList();
+            var s = (from d in context.Doctors
+                     where d.DoctorName != null
+                     orderby d.DoctorName
+                     select d).ToList();
+            return s;
         }
 
         public List<Doctor> GetAllDoctorsByAvailability(string Day)
