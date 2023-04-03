@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Capstone Project\\Fork Backend\\TechWhiz-Backend\\Audit_DataEntites\\Audit_DataEntites.csproj": {}
+    "C:\\HMS\\TechWhiz-Backend\\Audit_DataEntites\\Audit_DataEntites.csproj": {}
   },
   "projects": {
-    "E:\\Capstone Project\\Fork Backend\\TechWhiz-Backend\\Audit_DataEntites\\Audit_DataEntites.csproj": {
+    "C:\\HMS\\TechWhiz-Backend\\Audit_DataEntites\\Audit_DataEntites.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Capstone Project\\Fork Backend\\TechWhiz-Backend\\Audit_DataEntites\\Audit_DataEntites.csproj",
+        "projectUniqueName": "C:\\HMS\\TechWhiz-Backend\\Audit_DataEntites\\Audit_DataEntites.csproj",
         "projectName": "Audit_DataEntites",
-        "projectPath": "E:\\Capstone Project\\Fork Backend\\TechWhiz-Backend\\Audit_DataEntites\\Audit_DataEntites.csproj",
-        "packagesPath": "C:\\Users\\BHARTGAV\\.nuget\\packages\\",
-        "outputPath": "E:\\Capstone Project\\Fork Backend\\TechWhiz-Backend\\Audit_DataEntites\\obj\\",
+        "projectPath": "C:\\HMS\\TechWhiz-Backend\\Audit_DataEntites\\Audit_DataEntites.csproj",
+        "packagesPath": "C:\\Users\\Sai Krishna\\.nuget\\packages\\",
+        "outputPath": "C:\\HMS\\TechWhiz-Backend\\Audit_DataEntites\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\BHARTGAV\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Sai Krishna\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -77,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

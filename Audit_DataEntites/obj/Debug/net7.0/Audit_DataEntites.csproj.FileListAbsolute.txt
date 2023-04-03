@@ -26,3 +26,17 @@ E:\Capstone Project\Fork Backend\TechWhiz-Backend\Audit_DataEntites\obj\Debug\ne
 E:\Capstone Project\Fork Backend\TechWhiz-Backend\Audit_DataEntites\obj\Debug\net7.0\Audit_DataEntites.pdb
 E:\Capstone Project\Fork Backend\TechWhiz-Backend\Audit_DataEntites\obj\Debug\net7.0\Audit_DataEntites.genruntimeconfig.cache
 E:\Capstone Project\Fork Backend\TechWhiz-Backend\Audit_DataEntites\obj\Debug\net7.0\ref\Audit_DataEntites.dll
+C:\HMS\TechWhiz-Backend\Audit_DataEntites\bin\Debug\net7.0\Audit_DataEntites.deps.json
+C:\HMS\TechWhiz-Backend\Audit_DataEntites\bin\Debug\net7.0\Audit_DataEntites.runtimeconfig.json
+C:\HMS\TechWhiz-Backend\Audit_DataEntites\bin\Debug\net7.0\Audit_DataEntites.dll
+C:\HMS\TechWhiz-Backend\Audit_DataEntites\bin\Debug\net7.0\Audit_DataEntites.pdb
+C:\HMS\TechWhiz-Backend\Audit_DataEntites\obj\Debug\net7.0\Audit_DataEntites.csproj.AssemblyReference.cache
+C:\HMS\TechWhiz-Backend\Audit_DataEntites\obj\Debug\net7.0\Audit_DataEntites.GeneratedMSBuildEditorConfig.editorconfig
+C:\HMS\TechWhiz-Backend\Audit_DataEntites\obj\Debug\net7.0\Audit_DataEntites.AssemblyInfoInputs.cache
+C:\HMS\TechWhiz-Backend\Audit_DataEntites\obj\Debug\net7.0\Audit_DataEntites.AssemblyInfo.cs
+C:\HMS\TechWhiz-Backend\Audit_DataEntites\obj\Debug\net7.0\Audit_DataEntites.csproj.CoreCompileInputs.cache
+C:\HMS\TechWhiz-Backend\Audit_DataEntites\obj\Debug\net7.0\Audit_DataEntites.dll
+C:\HMS\TechWhiz-Backend\Audit_DataEntites\obj\Debug\net7.0\refint\Audit_DataEntites.dll
+C:\HMS\TechWhiz-Backend\Audit_DataEntites\obj\Debug\net7.0\Audit_DataEntites.pdb
+C:\HMS\TechWhiz-Backend\Audit_DataEntites\obj\Debug\net7.0\Audit_DataEntites.genruntimeconfig.cache
+C:\HMS\TechWhiz-Backend\Audit_DataEntites\obj\Debug\net7.0\ref\Audit_DataEntites.dll

@@ -22,3 +22,15 @@ E:\Capstone Project\Fork Backend\TechWhiz-Backend\Audit_Models\obj\Debug\net7.0\
 E:\Capstone Project\Fork Backend\TechWhiz-Backend\Audit_Models\obj\Debug\net7.0\refint\Audit_Models.dll
 E:\Capstone Project\Fork Backend\TechWhiz-Backend\Audit_Models\obj\Debug\net7.0\Audit_Models.pdb
 E:\Capstone Project\Fork Backend\TechWhiz-Backend\Audit_Models\obj\Debug\net7.0\ref\Audit_Models.dll
+C:\HMS\TechWhiz-Backend\Audit_Models\bin\Debug\net7.0\Audit_Models.deps.json
+C:\HMS\TechWhiz-Backend\Audit_Models\bin\Debug\net7.0\Audit_Models.dll
+C:\HMS\TechWhiz-Backend\Audit_Models\bin\Debug\net7.0\Audit_Models.pdb
+C:\HMS\TechWhiz-Backend\Audit_Models\obj\Debug\net7.0\Audit_Models.csproj.AssemblyReference.cache
+C:\HMS\TechWhiz-Backend\Audit_Models\obj\Debug\net7.0\Audit_Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\HMS\TechWhiz-Backend\Audit_Models\obj\Debug\net7.0\Audit_Models.AssemblyInfoInputs.cache
+C:\HMS\TechWhiz-Backend\Audit_Models\obj\Debug\net7.0\Audit_Models.AssemblyInfo.cs
+C:\HMS\TechWhiz-Backend\Audit_Models\obj\Debug\net7.0\Audit_Models.csproj.CoreCompileInputs.cache
+C:\HMS\TechWhiz-Backend\Audit_Models\obj\Debug\net7.0\Audit_Models.dll
+C:\HMS\TechWhiz-Backend\Audit_Models\obj\Debug\net7.0\refint\Audit_Models.dll
+C:\HMS\TechWhiz-Backend\Audit_Models\obj\Debug\net7.0\Audit_Models.pdb
+C:\HMS\TechWhiz-Backend\Audit_Models\obj\Debug\net7.0\ref\Audit_Models.dll
