@@ -44,7 +44,7 @@ namespace DataEntities
                     break;
             }
             string fromEmail = "whizcarehospitalgroup@gmail.com";
-            string pass = "pvczuyxapumuimvn";
+            string pass = "lovypueypvddymur";
             string smtpHost = "smtp.gmail.com";
             int smtpPort = 587;
 
