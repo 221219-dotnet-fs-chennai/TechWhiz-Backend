@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  allergy_services:
+    image: ${DOCKER_REGISTRY-}allergyservices
+    build:
+      context: .
+      dockerfile: Allergy_Services/Dockerfile

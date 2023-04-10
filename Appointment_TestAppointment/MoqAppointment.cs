@@ -152,8 +152,37 @@ namespace Appointment_TestAppointment
 
 
         }
-     
 
+        [Fact]
+        public void UpdateCheckUpStatus()
+        {
+            var app = fixture.Create<Models.Appointment>();
+            var appid = fixture.Create<Guid>();
+            var appbool = fixture.Create<bool>();
+
+            _appointment.Setup(s => s.UpdateCheckUpStatus(appid, appbool)).Returns(app);
+
+            var res = controller.UpdateCheckUpStatus(appid, appbool);
+            res.Should().NotBeNull();
+            res.Should().BeAssignableTo<OkObjectResult>();
+            res.As<OkObjectResult>().Value.Should().NotBeNull().And.BeOfType(app.GetType());
+            _appointment.Verify(x => x.UpdateCheckUpStatus(appid, appbool), Times.AtLeastOnce());
+        }
+        [Fact]
+        public void UpdateCheckUpStatusCatch()
+        {
+            var app = fixture.Create<Models.Appointment>();
+            var appid = fixture.Create<Guid>();
+            var appbool = fixture.Create<bool>();
+
+            _appointment.Setup(x => x.UpdateCheckUpStatus(appid, appbool)).Throws(new Exception("Somwthing went wrong"));
+
+            var res = controller.UpdateCheckUpStatus(appid, appbool);
+
+            res.Should().NotBeNull();
+            res.Should().BeAssignableTo<BadRequestObjectResult>();
+            _appointment.Verify(x => x.UpdateCheckUpStatus(appid, appbool), Times.AtLeastOnce());
+        }
         [Fact]
         public void UpdateStatus_Test()
         {
@@ -249,6 +278,7 @@ namespace Appointment_TestAppointment
             result.Should().BeAssignableTo<NoContentResult>();
             _appointment.Verify(x => x.GetAppointmentsByDoctor_idByStatus(doctor_id, status), Times.AtLeastOnce());
         }
+        
 
     }
 
