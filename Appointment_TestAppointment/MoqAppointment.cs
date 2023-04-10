@@ -107,6 +107,23 @@ namespace Appointment_TestAppointment
            
         }
         [Fact]
+        public void GetAppDateBAd()
+        {
+            var appointmentMock = fixture.Create<IEnumerable<Models.Appointment>>();
+            var app = fixture.Create<Models.Appointment>();
+
+            var date = fixture.Create<DateTime>();
+            string dt = "2023-03-27";
+            var date1 = fixture.Create<DateTime>();
+
+            _appointment.Setup(x => x.GetAppointmentsByDate(date1)).Throws(new Exception("Something went wrong"));
+            var result = controller.GetAppointmentByDate(dt);
+
+            result.Should().NotBeNull();
+            result.Should().BeAssignableTo<BadRequestObjectResult>();
+
+        }
+        [Fact]
         public void GetappAfterBad()
         {
             IEnumerable<Models.Appointment> app = null;
