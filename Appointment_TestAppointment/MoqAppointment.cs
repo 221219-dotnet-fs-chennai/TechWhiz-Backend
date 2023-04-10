@@ -106,6 +106,36 @@ namespace Appointment_TestAppointment
 
            
         }
+        [Fact]
+        public void GetappAfterBad()
+        {
+            IEnumerable<Models.Appointment> app = null;
+            var docid = fixture.Create<Guid>();
+            var date = fixture.Create<string>();
+            var date1 = fixture.Create<DateTime>();
+            string dt = "2023-04-10";
+            _appointment.Setup(x => x.GetAppointmentsAfterCheckup(date1, docid)).Returns(app);
+            var res = controller.GetAppointmentsAfterCheckup(docid, date);
+            res.Should().BeAssignableTo<BadRequestObjectResult>();
+            
+        }
+
+
+        [Fact]
+        public void GetAppAfterCatch()
+        {
+            var appointment = fixture.Create<IEnumerable<Models.Appointment>>();
+            var doctor_id = fixture.Create<Guid>();
+            var date = fixture.Create<DateTime>();
+            string date1 = "2023-03-27";
+
+            _appointment.Setup(x => x.GetAppointmentsAfterCheckup(date, doctor_id)).Throws(new Exception("Something went wrong"));
+            var res = controller.GetAppointmentsAfterCheckup(doctor_id, date1);
+            res.Should().NotBeNull();
+            res.Should().BeAssignableTo<OkObjectResult>();
+            //_appointment.Verify(x => x.GetAppointmentsAfterCheckup(date, doctor_id), Times.AtLeastOnce());
+
+        }
 
         [Fact]
         public void GetAppointmentsAfterCheckup_OkResponse_Test()
@@ -121,12 +151,13 @@ namespace Appointment_TestAppointment
 
             result.Should().NotBeNull();
             result.Should().BeAssignableTo<OkObjectResult>();
-           /* result.As<OkObjectResult>().Value.Should().NotBeNull().And.BeOfType(appointment.GetType());
-            _appointment.Verify(x => x.GetAppointmentsAfterCheckup(date, doctor_id), Times.AtLeastOnce);*/
 
         }
-
         
+
+       
+
+
         [Fact]
         public void AddAppointment_OkResponse_Test()
         {
@@ -206,7 +237,7 @@ namespace Appointment_TestAppointment
             var appid = fixture.Create<Guid>();
             var appbool = fixture.Create<bool>();
 
-            _appointment.Setup(x => x.UpdateCheckUpStatus(appid, appbool)).Throws(new Exception("Somwthing went wrong"));
+            _appointment.Setup(x => x.UpdateCheckUpStatus(appid, appbool)).Throws(new Exception("Something went wrong"));
 
             var res = controller.UpdateCheckUpStatus(appid, appbool);
 
@@ -220,35 +251,30 @@ namespace Appointment_TestAppointment
         public void Email_Notification_Test()
         {
             var app2 = fixture.Create<Models.Appointment>();
-            var email = fixture.Create<string>();
+           
 
             var status = fixture.Create<string>();
             var date1 = fixture.Create<string>();
-            var date2 = fixture.Create<string>();
-            var email1 = "lilly2@nurse.com";
+            var email = fixture.Create<string>();
             _appointment.Setup(x => x.EmailFunc(email, date1, status));
 
-            var result = controller.SendEmail(email1, date2, status);
+            var result = controller.SendEmail(email, date1, status);
 
             result.Should().NotBeNull();
             result.Should().BeAssignableTo<OkObjectResult>();
         }
-
-
-
         [Fact]
-        public void GetappointmentsbyDoctoridAndStatus_OkResponse_Test()
+        public void emailCatch()
         {
-            var appointment=fixture.Create<IEnumerable<Models.Appointment>>();
-            var doctor_id=fixture.Create<Guid>();
+            var app = fixture.Create<Models.Appointment>();
+            var email = fixture.Create<string>();
             var status = fixture.Create<string>();
-            _appointment.Setup(x=>x.GetAppointmentsByDoctor_idByStatus(doctor_id,status)).Returns(appointment);
+            var date = fixture.Create<string>();
+            _appointment.Setup(x => x.EmailFunc(email, date, status)).Throws(new Exception("Soemthing went wong"));
+            var res = controller.SendEmail(email, date, status);
+            res.Should().BeAssignableTo<BadRequestObjectResult>();
+            _appointment.Verify(x => x.EmailFunc(email, date, status), Times.AtLeastOnce());
 
-            var result =controller.GetAppointmentsByDoctorId(doctor_id, status);
-            result.Should().NotBeNull();
-            result.Should().BeAssignableTo<OkObjectResult>();
-            result.As<OkObjectResult>().Value.Should().NotBeNull().And.BeOfType(appointment.GetType());
-            _appointment.Verify(x=>x.GetAppointmentsByDoctor_idByStatus(doctor_id,status), Times.AtLeastOnce());
         }
 
         [Fact]
@@ -264,6 +290,22 @@ namespace Appointment_TestAppointment
 
             result.Should().BeAssignableTo<BadRequestObjectResult>();
             _appointment.Verify(x => x.GetAppointmentsByDoctor_idByStatus(doctor_id, status), Times.AtLeastOnce());
+        }
+
+
+        [Fact]
+        public void GetappointmentsbyDoctoridAndStatus_OkResponse_Test()
+        {
+            var appointment=fixture.Create<IEnumerable<Models.Appointment>>();
+            var doctor_id=fixture.Create<Guid>();
+            var status = fixture.Create<string>();
+            _appointment.Setup(x=>x.GetAppointmentsByDoctor_idByStatus(doctor_id,status)).Returns(appointment);
+
+            var result =controller.GetAppointmentsByDoctorId(doctor_id, status);
+            result.Should().NotBeNull();
+            result.Should().BeAssignableTo<OkObjectResult>();
+            result.As<OkObjectResult>().Value.Should().NotBeNull().And.BeOfType(appointment.GetType());
+            _appointment.Verify(x=>x.GetAppointmentsByDoctor_idByStatus(doctor_id,status), Times.AtLeastOnce());
         }
 
         [Fact]
