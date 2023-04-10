@@ -3926,34 +3926,33 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\BHARTGAV\\.nuget\\packages\\": {}
+    "/Users/dhanushreddy/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Capstone Project\\Fork Backend\\TechWhiz-Backend\\Audit_Service\\Audit_Service.csproj",
+      "projectUniqueName": "/Users/dhanushreddy/Desktop/Repo/TechWhiz-Backend/Audit_Service/Audit_Service.csproj",
       "projectName": "Audit_Service",
-      "projectPath": "E:\\Capstone Project\\Fork Backend\\TechWhiz-Backend\\Audit_Service\\Audit_Service.csproj",
-      "packagesPath": "C:\\Users\\BHARTGAV\\.nuget\\packages\\",
-      "outputPath": "E:\\Capstone Project\\Fork Backend\\TechWhiz-Backend\\Audit_Service\\obj\\",
+      "projectPath": "/Users/dhanushreddy/Desktop/Repo/TechWhiz-Backend/Audit_Service/Audit_Service.csproj",
+      "packagesPath": "/Users/dhanushreddy/.nuget/packages/",
+      "outputPath": "/Users/dhanushreddy/Desktop/Repo/TechWhiz-Backend/Audit_Service/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\BHARTGAV\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/dhanushreddy/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "/usr/local/share/dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "E:\\Capstone Project\\Fork Backend\\TechWhiz-Backend\\Audit_BusinessLogic\\Audit_BusinessLogic.csproj": {
-              "projectPath": "E:\\Capstone Project\\Fork Backend\\TechWhiz-Backend\\Audit_BusinessLogic\\Audit_BusinessLogic.csproj"
+            "/Users/dhanushreddy/Desktop/Repo/TechWhiz-Backend/Audit_BusinessLogic/Audit_BusinessLogic.csproj": {
+              "projectPath": "/Users/dhanushreddy/Desktop/Repo/TechWhiz-Backend/Audit_BusinessLogic/Audit_BusinessLogic.csproj"
             }
           }
         }
@@ -4002,7 +4001,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
       }
     }
   }
